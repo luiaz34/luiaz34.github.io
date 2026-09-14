@@ -1,0 +1,67 @@
+{
+  "roles": [
+    {
+      "id": "general-magick-industries",
+      "company": "General Magick Industries",
+      "title": "AI & Backend Developer",
+      "location": "Bangkok, Thailand",
+      "start": "2024-03",
+      "end": null,
+      "products": [
+        {
+          "name": "Magick Box",
+          "blurb": "AI creative platform on iOS, Android and the web",
+          "highlights": [
+            "Built the backend in Python 3.12 with FastAPI and Pydantic: around 250 REST endpoints across 21 feature packages.",
+            "Structured the codebase as feature-sliced Clean Architecture with interface-based repositories and an async dependency-injection layer.",
+            "Designed the MongoDB data model: around 58 collections with indexes and aggregation pipelines.",
+            "Wrote the feed ranker, blending time-decayed vote score with follow, tag and content-type affinity.",
+            "Used Redis for caching with TTL invalidation, a sliding-window rate limiter, and Socket.IO pub/sub across pods.",
+            "Integrated text, image, video, music and podcast generation across seven providers behind one abstraction, with credit-based model tiers.",
+            "Ran long generation jobs on Celery with late acknowledgements, exponential backoff and time limits.",
+            "Built Mini Cinema, a multi-shot AI film pipeline that streams reasoning, approval gates and renders as typed content blocks.",
+            "Built real-time chat over Socket.IO with token streaming, per-user chat locks and a content-block message schema.",
+            "Built group chat mixing human members with AI personas: invitations, admin roles, mentions and unread tracking.",
+            "Implemented device-bound JWT sessions, Argon2 hashing with legacy migration, email OTP, and Google and Apple sign-in.",
+            "Implemented Stripe and RevenueCat billing with signature-verified webhooks and an idempotent credit ledger.",
+            "Wrote 181 pytest tests across chat orchestration, feed ranking, payments and session authorisation.",
+            "Deployed to Kubernetes on AWS with Helm, Istio mTLS and horizontal autoscaling, from one Docker image serving both web and worker."
+          ]
+        },
+        {
+          "name": "Magick Whisper",
+          "blurb": "Dog-training companion for the Guardian collar, in development",
+          "highlights": [
+            "Wrote the Go API with Gin and pgx over PostgreSQL: hand-written SQL and embedded goose migrations.",
+            "Implemented Google and Apple ID-token verification against cached JWKS, 15-minute access tokens and rotating hashed refresh tokens.",
+            "Returned RFC 7807 problem responses with per-field validation, plus request-ID logging and readiness probes.",
+            "Wrote 134 Go tests that run against a real Postgres service in CI, with a check that fails the build if a database test skips.",
+            "Built the Flutter app with Riverpod and go_router, with on-device speech recognition through Whisper and Silero VAD.",
+            "Kept sign-in optional and off the onboarding path to meet App Store guideline 5.1.1.",
+            "Shipped through GitHub Actions for tests and Codemagic for signed iOS and Android releases."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yoma-bank",
+      "company": "Yoma Bank",
+      "title": "Full Stack Developer",
+      "location": "Yangon, Myanmar",
+      "start": "2023-10",
+      "end": "2024-03",
+      "products": [
+        {
+          "name": "Internal compliance tooling",
+          "blurb": "Audit and compliance software for the bank's legal team",
+          "highlights": [
+            "Built internal compliance and audit tools, replacing manual checks with a tracked workflow.",
+            "Designed and maintained REST APIs in Java, with relational schema design and SQL behind the reporting datasets.",
+            "Processed data for internal reports and worked in a Git workflow with code reviews.",
+            "Built front-end features in JavaScript, HTML and CSS."
+          ]
+        }
+      ]
+    }
+  ]
+}

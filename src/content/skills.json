@@ -1,0 +1,91 @@
+{
+  "groups": [
+    {
+      "name": "Languages",
+      "items": ["Python", "Go", "Java", "Dart", "SQL", "JavaScript", "TypeScript"]
+    },
+    {
+      "name": "Backend",
+      "items": [
+        "FastAPI",
+        "Pydantic",
+        "Gin",
+        "REST",
+        "OpenAPI",
+        "WebSockets (Socket.IO)",
+        "Clean Architecture",
+        "Dependency injection",
+        "Async programming"
+      ]
+    },
+    {
+      "name": "Databases",
+      "items": [
+        "PostgreSQL",
+        "pgx",
+        "goose migrations",
+        "MongoDB",
+        "Aggregation pipelines",
+        "Indexing",
+        "Redis"
+      ]
+    },
+    {
+      "name": "Async, caching and resilience",
+      "items": [
+        "Celery",
+        "Redis caching",
+        "Sliding-window rate limiting",
+        "Idempotent webhooks",
+        "Retries with backoff",
+        "FFmpeg"
+      ]
+    },
+    {
+      "name": "Auth and security",
+      "items": [
+        "JWT",
+        "OAuth and OIDC",
+        "Google and Apple sign-in",
+        "JWKS verification",
+        "Argon2",
+        "Webhook signature verification",
+        "DAST scanning"
+      ]
+    },
+    {
+      "name": "AI",
+      "items": [
+        "LiteLLM",
+        "OpenAI",
+        "Google Gemini and Veo",
+        "Groq",
+        "Stability AI",
+        "Suno",
+        "Kling",
+        "RAG",
+        "On-device Whisper"
+      ]
+    },
+    {
+      "name": "Testing and delivery",
+      "items": [
+        "pytest",
+        "Go testing",
+        "Flutter widget tests",
+        "GitHub Actions",
+        "Codemagic",
+        "Docker",
+        "Helm",
+        "Kubernetes",
+        "Istio",
+        "AWS",
+        "Render"
+      ]
+    },
+    {
+      "name": "Mobile and payments",
+      "items": ["Flutter", "Riverpod", "go_router", "Stripe", "RevenueCat", "AdMob SSV"]
+    }
+  ]
+}

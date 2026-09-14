@@ -1,0 +1,21 @@
+{
+  "name": "Khaing Myal Htike",
+  "title": "AI & Backend Developer",
+  "location": "Bangkok, Thailand",
+  "email": "khaingmyalhtike3400@gmail.com",
+  "phone": "+66 61 117 8681",
+  "site": "https://magickbox.ai",
+  "years_experience": 3,
+  "summary": "Backend developer with three years of experience building and running production systems for AI products. Built the Python backend behind Magick Box, an AI creative app on iOS, Android and the web, from the API and data model through payments, real-time chat and Kubernetes deployment. More recently the Go API and Flutter app for Magick Whisper.",
+  "languages_spoken": [
+    { "language": "Burmese", "level": "native" },
+    { "language": "English", "level": "professional" },
+    { "language": "Thai", "level": "conversational" }
+  ],
+  "education": {
+    "degree": "BSc Computer Network and Infrastructure",
+    "school": "Liverpool John Moores University",
+    "location": "Liverpool, United Kingdom",
+    "years": "2021 – 2024"
+  }
+}

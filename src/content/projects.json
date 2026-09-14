@@ -1,0 +1,112 @@
+{
+  "projects": [
+    {
+      "slug": "magick-box",
+      "name": "Magick Box",
+      "tagline": "AI creative platform for image, video, music and podcast generation",
+      "role": "Backend developer",
+      "period": "2024 – present",
+      "status": "live",
+      "stack": [
+        "Python 3.12",
+        "FastAPI",
+        "Pydantic",
+        "MongoDB",
+        "Redis",
+        "Celery",
+        "Socket.IO",
+        "Docker",
+        "Kubernetes",
+        "Helm",
+        "Istio",
+        "AWS"
+      ],
+      "links": [
+        { "label": "App Store", "url": "https://apps.apple.com/th/app/magick-box/id6745868868" },
+        {
+          "label": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.generalmagickindustries.magickbox"
+        },
+        { "label": "Web", "url": "https://magickbox.ai" }
+      ],
+      "numbers": [
+        { "label": "REST endpoints", "value": "~250" },
+        { "label": "Feature packages", "value": "21" },
+        { "label": "MongoDB collections", "value": "~58" },
+        { "label": "pytest tests", "value": "181" }
+      ],
+      "sections": [
+        {
+          "heading": "The shape of it",
+          "body": "One FastAPI service, sliced by feature rather than by layer. Each of the twenty-one packages carries its own routes, services, repositories, schemas and dependency-injection providers, so a feature can be read, tested and changed without touching the rest. Repositories sit behind interfaces and are resolved through an async container, which is what makes the service layer testable without a database."
+        },
+        {
+          "heading": "Generation is slow, so nothing waits on it",
+          "body": "A request to make a film or a track returns immediately with a pending message. The real work runs on Celery with late acknowledgements, so a worker dying mid-render puts the job back rather than dropping it, and retries back off exponentially up to ten minutes. Progress streams to the client over Socket.IO while FFmpeg normalises audio and converts video at the end."
+        },
+        {
+          "heading": "Mini Cinema",
+          "body": "A multi-shot film pipeline where the model plans the shots, the user approves the plan, and only then does the render start. The tricky part was the message contract. Reasoning, status, approval gates and finished media all arrive as typed content blocks in one stream, so the client renders each as its own bubble without guessing at the payload."
+        },
+        {
+          "heading": "Paying for it",
+          "body": "Credits are deducted atomically, and every grant path is idempotent, because Stripe and RevenueCat both retry webhooks and rewarded-ad callbacks can arrive twice. Signatures are verified on every hook. A reconciler walks subscriptions to catch anything the webhooks missed."
+        },
+        {
+          "heading": "Running it",
+          "body": "One Docker image, built with uv in a multi-stage build, serves both the web process and the Celery worker depending on how it is started. Helm charts deploy it to Kubernetes on AWS with horizontal autoscaling, and Istio handles mutual TLS and retries between services."
+        }
+      ]
+    },
+    {
+      "slug": "magick-whisper",
+      "name": "Magick Whisper",
+      "tagline": "Reward-based dog-training companion for the Guardian collar",
+      "role": "Backend and mobile developer",
+      "period": "2026 – present",
+      "status": "in development",
+      "stack": [
+        "Go 1.25",
+        "Gin",
+        "PostgreSQL",
+        "pgx",
+        "goose",
+        "Flutter",
+        "Riverpod",
+        "sherpa_onnx",
+        "Docker",
+        "GitHub Actions",
+        "Codemagic"
+      ],
+      "links": [],
+      "numbers": [
+        { "label": "Go tests", "value": "134" },
+        { "label": "Flutter tests", "value": "~480" },
+        { "label": "Access token life", "value": "15 min" },
+        { "label": "Image base", "value": "distroless" }
+      ],
+      "sections": [
+        {
+          "heading": "No passwords anywhere",
+          "body": "Sign-in is Google or Apple only. The API verifies the provider's ID token against their published JWKS, cached and refreshed, and accepts only RS256 and ES256 so a token signed with a symmetric key can never be mistaken for a valid one. It then issues its own short access token and an opaque refresh token, stored only as a SHA-256 hash and rotated on every use."
+        },
+        {
+          "heading": "Apple sends a person's name exactly once",
+          "body": "On the very first sign-in and never again. Nothing was capturing it, so every account created before the fix would have lost its owner's name permanently, with no way to repair it later. Caught before launch and fixed with a migration."
+        },
+        {
+          "heading": "Seventeen tests that had never run",
+          "body": "The database tests skipped silently in CI because no Postgres was attached, and skips report as passes. They had been green and meaningless for weeks, including the one guarding the name above. CI now runs a Postgres service and fails the build if any database test skips."
+        },
+        {
+          "heading": "Speech recognition on the phone",
+          "body": "Training sessions are scored by listening for cue words, which runs entirely on the device through Whisper and Silero voice detection in a background isolate. Nothing is uploaded, sessions are stored locally, and uploads carry client-generated identifiers so a retry after a dropped connection cannot create a duplicate."
+        },
+        {
+          "heading": "Sign-in is optional, deliberately",
+          "body": "The design called for a launch gate with no way past it. That reads as a rejection risk under App Store guideline 5.1.1, which expects people to use an app before handing over an identity. Onboarding runs with no account, and the account is offered afterwards as a way to back up the dog profile the owner has already built."
+        }
+      ]
+    }
+  ]
+}
