@@ -4,5 +4,4 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 public/v1/
-public/cv/
 public/.nojekyll

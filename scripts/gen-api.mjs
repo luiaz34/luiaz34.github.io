@@ -50,7 +50,8 @@ write('index.json', {
 // GitHub Pages serves through Jekyll unless told not to.
 writeFileSync(join(root, 'public', '.nojekyll'), '')
 
-// Ship whichever CV files exist next to the site.
+// The CVs are committed under public/cv so CI can publish them. When a fresher
+// copy is sitting in Downloads on the author's machine, pick that up instead.
 const cvDir = join(root, 'public', 'cv')
 mkdirSync(cvDir, { recursive: true })
 const downloads = 'C:/Users/khain/Downloads'
