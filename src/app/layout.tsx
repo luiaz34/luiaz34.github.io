@@ -13,14 +13,11 @@ export const metadata: Metadata = {
   },
 }
 
-/** Applies the saved theme before paint, so the page never flashes the wrong one. */
-const THEME_BOOT = `try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}`
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en">
       <body>
-        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
         <Shell>{children}</Shell>
       </body>
     </html>

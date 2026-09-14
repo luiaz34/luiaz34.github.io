@@ -24,7 +24,8 @@ export default function ProjectPage({ project }: { project: Project }) {
   return (
     <>
       <header className="mb-8">
-        <h1 className="text-[28px] font-bold">{project.name}</h1>
+        <p className="eyebrow mb-3">Case study</p>
+        <h1 className="grad-text text-[32px] font-bold tracking-tight">{project.name}</h1>
         <p className="mt-1 max-w-[62ch] text-[15px]" style={{ color: 'var(--muted)' }}>
           {project.tagline}
         </p>
@@ -44,10 +45,8 @@ export default function ProjectPage({ project }: { project: Project }) {
 
       <section className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {project.numbers.map((n) => (
-          <div key={n.label} className="panel p-3.5">
-            <div className="mono text-[20px] font-bold leading-none" style={{ color: 'var(--accent)' }}>
-              {n.value}
-            </div>
+          <div key={n.label} className="panel panel-lit p-3.5">
+            <div className="grad-num mono text-[21px] font-bold leading-none">{n.value}</div>
             <div className="mt-1.5 text-[11.5px]" style={{ color: 'var(--muted)' }}>
               {n.label}
             </div>
@@ -57,7 +56,7 @@ export default function ProjectPage({ project }: { project: Project }) {
 
       {Diagram && (
         <section className="mb-8">
-          <h2 className="mb-3 text-lg font-bold">How it fits together</h2>
+          <h2 className="mb-3 text-[19px] font-bold">How it fits together</h2>
           <Diagram />
         </section>
       )}
@@ -65,7 +64,7 @@ export default function ProjectPage({ project }: { project: Project }) {
       <section className="mb-8">
         {project.sections.map((s) => (
           <div key={s.heading} className="mb-6">
-            <h2 className="mb-2 text-[16px] font-bold">{s.heading}</h2>
+            <h2 className="mb-2 text-[16.5px] font-bold">{s.heading}</h2>
             <p className="max-w-[68ch] text-[14px] leading-relaxed" style={{ color: 'var(--ink)' }}>
               {s.body}
             </p>
@@ -74,7 +73,7 @@ export default function ProjectPage({ project }: { project: Project }) {
       </section>
 
       <section className="mb-8">
-        <h2 className="mb-3 text-lg font-bold">Stack</h2>
+        <h2 className="mb-3 text-[19px] font-bold">Stack</h2>
         <div className="flex flex-wrap gap-1.5">
           {project.stack.map((s) => (
             <span key={s} className="chip">

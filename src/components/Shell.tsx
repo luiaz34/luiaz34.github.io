@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const ROUTES = [
   { href: '/', label: 'Home' },
@@ -13,38 +13,6 @@ const ROUTES = [
   { href: '/contact/', label: 'Contact' },
 ]
 
-function ThemeToggle() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
-
-  useEffect(() => {
-    const saved = (localStorage.getItem('theme') as 'dark' | 'light' | null) ?? 'dark'
-    setTheme(saved)
-    document.documentElement.dataset.theme = saved
-  }, [])
-
-  function flip() {
-    const next = theme === 'dark' ? 'light' : 'dark'
-    setTheme(next)
-    document.documentElement.dataset.theme = next
-    try {
-      localStorage.setItem('theme', next)
-    } catch {
-      /* private mode, the choice just will not persist */
-    }
-  }
-
-  return (
-    <button
-      onClick={flip}
-      className="mono rounded px-2 py-1 text-[11px]"
-      style={{ border: '1px solid var(--line)', color: 'var(--muted)' }}
-      aria-label="Switch between dark and light"
-    >
-      {theme === 'dark' ? 'dark' : 'light'}
-    </button>
-  )
-}
-
 export default function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
@@ -52,71 +20,107 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen">
-      <header
-        className="sticky top-0 z-30 border-b backdrop-blur"
-        style={{ borderColor: 'var(--line)', background: 'color-mix(in srgb, var(--bg) 88%, transparent)' }}
-      >
-        <div className="mx-auto flex max-w-[1180px] items-center gap-3 px-5 py-3">
-          <Link href="/" className="mono text-sm font-bold">
-            khaing<span style={{ color: 'var(--accent)' }}>.dev</span>
-          </Link>
-          <span className="ml-auto flex items-center gap-2">
-            <a
-              className="mono hidden rounded px-2 py-1 text-[11px] sm:block"
-              style={{ border: '1px solid var(--line)', color: 'var(--muted)' }}
-              href="https://github.com/luiaz34"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github
-            </a>
-            <ThemeToggle />
-            <button
-              className="mono rounded px-2 py-1 text-[11px] lg:hidden"
-              style={{ border: '1px solid var(--line)', color: 'var(--muted)' }}
-              onClick={() => setOpen((o) => !o)}
-            >
-              menu
-            </button>
-          </span>
+      <header className="sticky top-0 z-30">
+        {/* the lit edge that runs the width of the page */}
+        <div
+          style={{
+            height: 1,
+            background:
+              'linear-gradient(90deg, transparent, var(--accent) 22%, var(--accent-3) 58%, var(--accent-2) 80%, transparent)',
+            opacity: 0.7,
+          }}
+        />
+        <div
+          className="border-b backdrop-blur-xl"
+          style={{ borderColor: 'var(--line)', background: 'rgba(5, 9, 21, 0.72)' }}
+        >
+          <div className="mx-auto flex max-w-[1180px] items-center gap-3 px-5 py-3.5">
+            <Link href="/" className="mono text-sm font-bold tracking-tight">
+              khaing
+              <span
+                style={{
+                  background: 'linear-gradient(90deg, var(--accent), var(--accent-2))',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                }}
+              >
+                .dev
+              </span>
+            </Link>
+
+            <span className="ml-auto flex items-center gap-2">
+              <a
+                className="btn !hidden !px-2.5 !py-1.5 !text-[11px] sm:!inline-flex"
+                href="https://github.com/luiaz34"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a className="btn !px-2.5 !py-1.5 !text-[11px]" href="/cv/Khaing_Myal_Htike_CV_2026.pdf">
+                CV
+              </a>
+              <button
+                className="btn !px-2.5 !py-1.5 !text-[11px] lg:!hidden"
+                onClick={() => setOpen((o) => !o)}
+                aria-expanded={open}
+              >
+                Menu
+              </button>
+            </span>
+          </div>
         </div>
       </header>
 
-      <div className="mx-auto flex max-w-[1180px] gap-8 px-5 py-8">
-        <aside className={`${open ? 'block' : 'hidden'} w-[210px] shrink-0 lg:block`}>
-          <div className="sticky top-[72px]">
-            <nav className="flex flex-col gap-0.5">
-              {ROUTES.map((r) => {
-                const active = here(r.href)
-                return (
-                  <Link
-                    key={r.href}
-                    href={r.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded px-2 py-1.5 text-[13px]"
-                    style={{
-                      background: active ? 'var(--panel)' : 'transparent',
-                      border: `1px solid ${active ? 'var(--line)' : 'transparent'}`,
-                      color: active ? 'var(--ink)' : 'var(--muted)',
-                    }}
-                  >
-                    {r.label}
-                  </Link>
-                )
-              })}
-            </nav>
-          </div>
+      <div className="mx-auto flex max-w-[1180px] gap-9 px-5 py-9">
+        <aside className={`${open ? 'block' : 'hidden'} w-[200px] shrink-0 lg:block`}>
+          <nav className="sticky top-[86px] flex flex-col gap-1">
+            {ROUTES.map((r) => {
+              const active = here(r.href)
+              return (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  onClick={() => setOpen(false)}
+                  className="relative rounded-lg px-3 py-2 text-[13px] transition-colors"
+                  style={{
+                    background: active ? 'rgba(125,165,255,0.08)' : 'transparent',
+                    border: `1px solid ${active ? 'var(--line)' : 'transparent'}`,
+                    color: active ? 'var(--ink)' : 'var(--muted)',
+                  }}
+                >
+                  {active && (
+                    <span
+                      aria-hidden
+                      style={{
+                        position: 'absolute',
+                        left: -1,
+                        top: 8,
+                        bottom: 8,
+                        width: 2,
+                        borderRadius: 2,
+                        background: 'linear-gradient(180deg, var(--accent), var(--accent-3))',
+                        boxShadow: '0 0 12px rgba(77,163,255,0.8)',
+                      }}
+                    />
+                  )}
+                  {r.label}
+                </Link>
+              )
+            })}
+          </nav>
         </aside>
 
         <div className="min-w-0 flex-1">{children}</div>
       </div>
 
-      <footer className="border-t" style={{ borderColor: 'var(--line)' }}>
+      <footer className="mt-8 border-t" style={{ borderColor: 'var(--line)' }}>
         <div
-          className="mono mx-auto flex max-w-[1180px] flex-wrap items-center gap-x-4 gap-y-1 px-5 py-5 text-[11.5px]"
+          className="mono mx-auto flex max-w-[1180px] flex-wrap items-center gap-x-5 gap-y-1.5 px-5 py-6 text-[11.5px]"
           style={{ color: 'var(--muted)' }}
         >
-          <span>Khaing Myal Htike</span>
+          <span style={{ color: 'var(--ink)' }}>Khaing Myal Htike</span>
           <span>Bangkok, Thailand</span>
           <a className="link-accent" href="mailto:khaingmyalhtike3400@gmail.com">
             khaingmyalhtike3400@gmail.com

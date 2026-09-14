@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 
 const NODE = {
-  fill: 'var(--panel-2)',
+  fill: 'rgba(125, 165, 255, 0.07)',
   stroke: 'var(--line)',
-  rx: 6,
+  rx: 7,
 }
 
 function Box({
@@ -31,8 +31,9 @@ function Box({
         width={w}
         height={h}
         rx={NODE.rx}
-        fill={NODE.fill}
+        fill={accent ? 'rgba(77, 163, 255, 0.13)' : NODE.fill}
         stroke={accent ? 'var(--accent)' : NODE.stroke}
+        filter={accent ? 'url(#glow)' : undefined}
       />
       <text
         x={x + w / 2}
@@ -98,6 +99,13 @@ function Arrow({
 function Defs() {
   return (
     <defs>
+      <filter id="glow" x="-40%" y="-70%" width="180%" height="240%">
+        <feGaussianBlur stdDeviation="3.2" result="b" />
+        <feMerge>
+          <feMergeNode in="b" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
       <marker id="head" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
         <path d="M0,0 L6,3 L0,6 z" fill="var(--muted)" />
       </marker>

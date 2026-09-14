@@ -7,7 +7,8 @@ export default function SkillsPage() {
   return (
     <>
       <header className="mb-8">
-        <h1 className="text-[28px] font-bold">Skills</h1>
+        <p className="eyebrow mb-3">Toolbox</p>
+        <h1 className="grad-text text-[32px] font-bold tracking-tight">Skills</h1>
         <p className="mt-2 max-w-[62ch] text-sm" style={{ color: 'var(--muted)' }}>
           Everything listed here is in something that shipped, not something read about. The case studies
           say where each one was used.
@@ -16,8 +17,8 @@ export default function SkillsPage() {
 
       <div className="mb-8 grid gap-3 sm:grid-cols-2">
         {skills.groups.map((g) => (
-          <section key={g.name} className="panel p-4">
-            <h2 className="mono mb-2.5 text-[12px] uppercase tracking-wider" style={{ color: 'var(--accent)' }}>
+          <section key={g.name} className="panel panel-lit p-4">
+            <h2 className="eyebrow mb-3">
               {g.name}
             </h2>
             <div className="flex flex-wrap gap-1.5">

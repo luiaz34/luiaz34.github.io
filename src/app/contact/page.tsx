@@ -14,14 +14,15 @@ export default function ContactPage() {
   return (
     <>
       <header className="mb-8">
-        <h1 className="text-[28px] font-bold">Contact</h1>
+        <p className="eyebrow mb-3">Get in touch</p>
+        <h1 className="grad-text text-[32px] font-bold tracking-tight">Contact</h1>
         <p className="mt-2 max-w-[62ch] text-sm" style={{ color: 'var(--muted)' }}>
           Based in {profile.location}, open to backend and platform work. Email is the fastest way to
           reach me.
         </p>
       </header>
 
-      <section className="panel mb-6 divide-y" style={{ borderColor: 'var(--line)' }}>
+      <section className="panel panel-lit mb-6 divide-y" style={{ borderColor: 'var(--line)' }}>
         {LINKS.map((l) => (
           <div key={l.label} className="flex items-baseline gap-4 px-4 py-3" style={{ borderColor: 'var(--line)' }}>
             <span className="mono w-[70px] shrink-0 text-[11.5px]" style={{ color: 'var(--muted)' }}>
@@ -35,18 +36,16 @@ export default function ContactPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="mb-3 text-lg font-bold">CV</h2>
+        <h2 className="mb-3 text-[19px] font-bold">CV</h2>
         <div className="flex flex-wrap gap-2">
           <a
-            className="mono rounded px-3 py-2 text-[12.5px] font-semibold"
-            style={{ background: 'var(--accent)', color: 'var(--bg)' }}
+            className="btn btn-primary"
             href="/cv/Khaing_Myal_Htike_CV_2026.pdf"
           >
             Download CV (PDF)
           </a>
           <a
-            className="mono rounded px-3 py-2 text-[12.5px]"
-            style={{ border: '1px solid var(--line)' }}
+            className="btn"
             href="/cv/Khaing_Myal_Htike_CV_2026_no_photo.pdf"
           >
             Without photo
@@ -55,7 +54,7 @@ export default function ContactPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="mb-3 text-lg font-bold">Languages</h2>
+        <h2 className="mb-3 text-[19px] font-bold">Languages</h2>
         <div className="flex flex-wrap gap-1.5">
           {profile.languages_spoken.map((l) => (
             <span key={l.language} className="chip">
