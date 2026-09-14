@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import CodePane from '@/components/CodePane'
 import profile from '@/content/profile.json'
 import projects from '@/content/projects.json'
 
@@ -14,9 +13,6 @@ export default function Home() {
   return (
     <>
       <section className="grid-bg -mx-5 mb-10 border-b px-5 pb-10 pt-2" style={{ borderColor: 'var(--line)' }}>
-        <p className="mono mb-3 text-[11.5px]" style={{ color: 'var(--accent)' }}>
-          200 OK · content-type: application/json
-        </p>
         <h1 className="max-w-[19ch] text-[34px] font-bold leading-[1.1] sm:text-[44px]">
           {profile.name}
         </h1>
@@ -93,13 +89,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <h2 className="mb-1 text-lg font-bold">This page, as data</h2>
-        <p className="mb-4 max-w-[62ch] text-sm" style={{ color: 'var(--muted)' }}>
-          The site is static, but every page has a JSON twin at a real path. Copy the curl and run it.
-        </p>
-        <CodePane path="/v1/profile.json" body={profile} maxHeight={340} />
-      </section>
     </>
   )
 }

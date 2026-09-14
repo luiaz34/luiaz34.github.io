@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import CodePane from '@/components/CodePane'
 import experience from '@/content/experience.json'
 import profile from '@/content/profile.json'
 
@@ -17,11 +16,7 @@ export default function ExperiencePage() {
   return (
     <>
       <header className="mb-8">
-        <span className="method">GET</span>
-        <code className="mono ml-2 text-xs" style={{ color: 'var(--muted)' }}>
-          /v1/experience
-        </code>
-        <h1 className="mt-3 text-[28px] font-bold">Experience</h1>
+        <h1 className="text-[28px] font-bold">Experience</h1>
         <p className="mt-2 max-w-[62ch] text-sm" style={{ color: 'var(--muted)' }}>
           Three years, two employers, and one long stretch of owning a production backend end to end.
         </p>
@@ -70,7 +65,6 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <CodePane path="/v1/experience.json" body={experience} maxHeight={380} />
     </>
   )
 }

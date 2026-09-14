@@ -5,17 +5,12 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const ROUTES = [
-  { href: '/', method: 'GET', path: '/', label: 'index' },
-  { href: '/experience/', method: 'GET', path: '/v1/experience', label: 'experience' },
-  { href: '/projects/magick-box/', method: 'GET', path: '/v1/projects/magick-box', label: 'magick-box' },
-  {
-    href: '/projects/magick-whisper/',
-    method: 'GET',
-    path: '/v1/projects/magick-whisper',
-    label: 'magick-whisper',
-  },
-  { href: '/skills/', method: 'GET', path: '/v1/skills', label: 'skills' },
-  { href: '/contact/', method: 'GET', path: '/v1/profile', label: 'contact' },
+  { href: '/', label: 'Home' },
+  { href: '/experience/', label: 'Experience' },
+  { href: '/projects/magick-box/', label: 'Magick Box' },
+  { href: '/projects/magick-whisper/', label: 'Magick Whisper' },
+  { href: '/skills/', label: 'Skills' },
+  { href: '/contact/', label: 'Contact' },
 ]
 
 function ThemeToggle() {
@@ -65,16 +60,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <Link href="/" className="mono text-sm font-bold">
             khaing<span style={{ color: 'var(--accent)' }}>.dev</span>
           </Link>
-          <span
-            className="mono hidden items-center gap-1.5 text-[11px] sm:flex"
-            style={{ color: 'var(--muted)' }}
-          >
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full"
-              style={{ background: 'var(--ok)' }}
-            />
-            200 OK
-          </span>
           <span className="ml-auto flex items-center gap-2">
             <a
               className="mono hidden rounded px-2 py-1 text-[11px] sm:block"
@@ -100,9 +85,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       <div className="mx-auto flex max-w-[1180px] gap-8 px-5 py-8">
         <aside className={`${open ? 'block' : 'hidden'} w-[210px] shrink-0 lg:block`}>
           <div className="sticky top-[72px]">
-            <p className="mono mb-2 text-[11px] uppercase tracking-wider" style={{ color: 'var(--muted)' }}>
-              Endpoints
-            </p>
             <nav className="flex flex-col gap-0.5">
               {ROUTES.map((r) => {
                 const active = here(r.href)
@@ -111,22 +93,18 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                     key={r.href}
                     href={r.href}
                     onClick={() => setOpen(false)}
-                    className="mono rounded px-2 py-1.5 text-[12.5px]"
+                    className="rounded px-2 py-1.5 text-[13px]"
                     style={{
                       background: active ? 'var(--panel)' : 'transparent',
                       border: `1px solid ${active ? 'var(--line)' : 'transparent'}`,
                       color: active ? 'var(--ink)' : 'var(--muted)',
                     }}
                   >
-                    <span style={{ color: active ? 'var(--accent)' : 'var(--muted)' }}>GET </span>
                     {r.label}
                   </Link>
                 )
               })}
             </nav>
-            <p className="mono mt-5 text-[11px]" style={{ color: 'var(--muted)' }}>
-              Every page here is also a JSON file. The paths are real.
-            </p>
           </div>
         </aside>
 
@@ -143,7 +121,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <a className="link-accent" href="mailto:khaingmyalhtike3400@gmail.com">
             khaingmyalhtike3400@gmail.com
           </a>
-          <span className="ml-auto">static site, no server, no cookies</span>
+          <span className="ml-auto">Open to backend and platform work</span>
         </div>
       </footer>
     </div>

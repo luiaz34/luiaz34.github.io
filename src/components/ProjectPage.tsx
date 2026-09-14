@@ -1,4 +1,3 @@
-import CodePane from '@/components/CodePane'
 import { MagickBoxDiagram, MagickWhisperDiagram } from '@/components/Diagrams'
 
 type Project = {
@@ -25,11 +24,7 @@ export default function ProjectPage({ project }: { project: Project }) {
   return (
     <>
       <header className="mb-8">
-        <span className="method">GET</span>
-        <code className="mono ml-2 text-xs" style={{ color: 'var(--muted)' }}>
-          /v1/projects/{project.slug}
-        </code>
-        <h1 className="mt-3 text-[28px] font-bold">{project.name}</h1>
+        <h1 className="text-[28px] font-bold">{project.name}</h1>
         <p className="mt-1 max-w-[62ch] text-[15px]" style={{ color: 'var(--muted)' }}>
           {project.tagline}
         </p>
@@ -89,7 +84,6 @@ export default function ProjectPage({ project }: { project: Project }) {
         </div>
       </section>
 
-      <CodePane path={`/v1/projects/${project.slug}.json`} body={project} maxHeight={360} />
     </>
   )
 }
