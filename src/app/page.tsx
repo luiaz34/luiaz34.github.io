@@ -12,7 +12,8 @@ const NUMBERS = [
 export default function Home() {
   return (
     <>
-      <section className="mb-12">
+      <section className="mb-12 flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0 flex-1">
         <p className="eyebrow mb-4">{profile.title}</p>
         <h1 className="grad-text max-w-[16ch] text-[38px] font-bold leading-[1.05] tracking-tight sm:text-[54px]">
           {profile.name}
@@ -34,6 +35,32 @@ export default function Home() {
           <a className="btn" href={`mailto:${profile.email}`}>
             Email me
           </a>
+        </div>
+        </div>
+
+        <div className="relative shrink-0">
+          <div
+            aria-hidden
+            className="absolute -inset-3 rounded-full"
+            style={{
+              background:
+                'conic-gradient(from 210deg, var(--accent), var(--accent-3), var(--accent-2), var(--accent))',
+              filter: 'blur(16px)',
+              opacity: 0.45,
+            }}
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/img/khaing.webp"
+            alt="Khaing Myal Htike"
+            width={168}
+            height={168}
+            className="relative h-[128px] w-[128px] rounded-full sm:h-[168px] sm:w-[168px]"
+            style={{
+              border: '1px solid rgba(125,165,255,0.45)',
+              boxShadow: '0 0 42px -10px rgba(77,163,255,0.75)',
+            }}
+          />
         </div>
       </section>
 

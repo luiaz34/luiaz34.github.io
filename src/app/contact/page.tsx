@@ -13,13 +13,27 @@ const LINKS = [
 export default function ContactPage() {
   return (
     <>
-      <header className="mb-8">
+      <header className="mb-8 flex items-start gap-5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/img/khaing.webp"
+          alt="Khaing Myal Htike"
+          width={84}
+          height={84}
+          className="hidden h-[84px] w-[84px] shrink-0 rounded-full sm:block"
+          style={{
+            border: '1px solid rgba(125,165,255,0.4)',
+            boxShadow: '0 0 30px -12px rgba(77,163,255,0.8)',
+          }}
+        />
+        <div>
         <p className="eyebrow mb-3">Get in touch</p>
         <h1 className="grad-text text-[32px] font-bold tracking-tight">Contact</h1>
         <p className="mt-2 max-w-[62ch] text-sm" style={{ color: 'var(--muted)' }}>
           Based in {profile.location}, open to backend and platform work. Email is the fastest way to
           reach me.
         </p>
+        </div>
       </header>
 
       <section className="panel panel-lit mb-6 divide-y" style={{ borderColor: 'var(--line)' }}>
