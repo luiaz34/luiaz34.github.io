@@ -10,6 +10,7 @@
         "FastAPI",
         "Pydantic",
         "Gin",
+        "Spring Boot",
         "REST",
         "OpenAPI",
         "WebSockets (Socket.IO)",
@@ -63,6 +64,7 @@
         "Stability AI",
         "Suno",
         "Kling",
+        "Flux",
         "RAG",
         "On-device Whisper"
       ]
@@ -79,13 +81,12 @@
         "Helm",
         "Kubernetes",
         "Istio",
-        "AWS",
-        "Render"
+        "AWS"
       ]
     },
     {
       "name": "Mobile and payments",
-      "items": ["Flutter", "Riverpod", "go_router", "Stripe", "RevenueCat", "AdMob SSV"]
+      "items": ["Flutter", "Riverpod", "go_router", "Angular", "Stripe", "RevenueCat", "AdMob SSV"]
     }
   ]
 }

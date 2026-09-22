@@ -12,33 +12,33 @@
           "name": "Magick Box",
           "blurb": "AI creative platform on iOS, Android and the web",
           "highlights": [
-            "Built the backend in Python 3.12 with FastAPI and Pydantic: around 250 REST endpoints across 21 feature packages.",
-            "Structured the codebase as feature-sliced Clean Architecture with interface-based repositories and an async dependency-injection layer.",
-            "Designed the MongoDB data model: around 58 collections with indexes and aggregation pipelines.",
-            "Wrote the feed ranker, blending time-decayed vote score with follow, tag and content-type affinity.",
-            "Used Redis for caching with TTL invalidation, a sliding-window rate limiter, and Socket.IO pub/sub across pods.",
-            "Integrated text, image, video, music and podcast generation across seven providers behind one abstraction, with credit-based model tiers.",
-            "Ran long generation jobs on Celery with late acknowledgements, exponential backoff and time limits.",
-            "Built Mini Cinema, a multi-shot AI film pipeline that streams reasoning, approval gates and renders as typed content blocks.",
-            "Built real-time chat over Socket.IO with token streaming, per-user chat locks and a content-block message schema.",
-            "Built group chat mixing human members with AI personas: invitations, admin roles, mentions and unread tracking.",
-            "Implemented device-bound JWT sessions, Argon2 hashing with legacy migration, email OTP, and Google and Apple sign-in.",
-            "Implemented Stripe and RevenueCat billing with signature-verified webhooks and an idempotent credit ledger.",
-            "Wrote 181 pytest tests across chat orchestration, feed ranking, payments and session authorisation.",
-            "Deployed to Kubernetes on AWS with Helm, Istio mTLS and horizontal autoscaling, from one Docker image serving both web and worker."
+            "Built and run the Python 3.12 / FastAPI backend that serves every client: around 250 REST endpoints across 21 feature packages on a 58-collection MongoDB model, with a ranked social feed, Redis caching and sliding-window rate limiting.",
+            "Exposed every generation type through magick_ai with credit-based model tiers, so a new model or provider ships as configuration rather than backend code.",
+            "Moved long-running generation onto Celery workers with retries, exponential backoff and time limits, so a provider outage fails one job instead of the API; FFmpeg stitches podcasts and converts video.",
+            "Built Mini Cinema, a multi-shot AI film pipeline that streams reasoning, approval gates and finished renders to the client as typed content blocks.",
+            "Built real-time chat and group chat over Socket.IO with token streaming, AI personas alongside human members, @mentions and per-user unread counts, with pub/sub keeping conversations in sync across pods.",
+            "Built billing on Stripe Checkout, RevenueCat and AdMob rewarded ads with signature-verified webhooks and an idempotent credit ledger, so retried or duplicated webhooks never grant credits twice and subscriptions reconcile automatically.",
+            "Implemented device-bound JWT sessions with refresh rotation, Argon2 hashing with transparent migration of legacy hashes, email OTP and Google and Apple sign-in, so existing users kept their accounts through the change.",
+            "Deployed to Kubernetes on AWS with Helm, Istio mTLS and horizontal autoscaling from one multi-stage Docker image serving web and worker; GitHub Actions runs 181 pytest tests, build, release and DAST scanning on every change."
+          ]
+        },
+        {
+          "name": "magick_ai",
+          "blurb": "Multi-service AI SDK the Magick Box backend depends on (private repository, access on request)",
+          "highlights": [
+            "Wrote and maintain the Python SDK: one UniversalAgent call covers chat, image, video, music and podcast generation across OpenAI, Google Gemini, Imagen and Veo, Stability, Replicate (Flux, Kling, MiniMax), Suno and AIML, with LLM calls routed through LiteLLM. Around 280 modules, shipped as 35+ tagged releases from 0.1 to 2.1.",
+            "Built the agents on top of it: chat orchestration with per-type handlers, validators and processors, a persona agent (Magick Friend), podcast and storybook generators, and automatic tagging for content discovery.",
+            "Added document analysis so chat can read user uploads (PDF, Word, Excel, PowerPoint) and answer from their contents, plus web search, prompt enhancement and history compression tools, standardised result entities and one error model in place of seven provider-specific ones. Media lands in S3 with metadata in MongoDB."
           ]
         },
         {
           "name": "Magick Whisper",
-          "blurb": "Dog-training companion for the Guardian collar, in development",
+          "blurb": "Dog-training companion for the Guardian collar, on TestFlight",
           "highlights": [
-            "Wrote the Go API with Gin and pgx over PostgreSQL: hand-written SQL and embedded goose migrations.",
-            "Implemented Google and Apple ID-token verification against cached JWKS, 15-minute access tokens and rotating hashed refresh tokens.",
-            "Returned RFC 7807 problem responses with per-field validation, plus request-ID logging and readiness probes.",
-            "Wrote 134 Go tests that run against a real Postgres service in CI, with a check that fails the build if a database test skips.",
-            "Built the Flutter app with Riverpod and go_router, with on-device speech recognition through Whisper and Silero VAD.",
-            "Kept sign-in optional and off the onboarding path to meet App Store guideline 5.1.1.",
-            "Shipped through GitHub Actions for tests and Codemagic for signed iOS and Android releases."
+            "Took the product from an empty repository to TestFlight in seven weeks: a Go API (Gin, pgx, PostgreSQL) with embedded migrations, and a Flutter app built with Riverpod and go_router.",
+            "Implemented Google and Apple sign-in verified against cached JWKS, with 15-minute access tokens and rotating hashed refresh tokens, kept optional so onboarding passes App Store guideline 5.1.1.",
+            "Added on-device speech recognition with Whisper and Silero VAD in a background isolate, plus an offline session store with retry-safe UUIDv7 uploads, so training sessions record without a connection.",
+            "Go tests run against a real PostgreSQL service in CI and the build fails if any database test skips; Codemagic ships signed iOS and Android builds to TestFlight and Google Play."
           ]
         }
       ]
@@ -48,17 +48,16 @@
       "company": "Yoma Bank",
       "title": "Full Stack Developer",
       "location": "Yangon, Myanmar",
-      "start": "2023-10",
+      "start": "2022-12",
       "end": "2024-03",
       "products": [
         {
           "name": "Internal compliance tooling",
-          "blurb": "Audit and compliance software for the bank's legal team",
+          "blurb": "Self-service compliance data tooling for the bank's legal team",
           "highlights": [
-            "Built internal compliance and audit tools, replacing manual checks with a tracked workflow.",
-            "Designed and maintained REST APIs in Java, with relational schema design and SQL behind the reporting datasets.",
-            "Processed data for internal reports and worked in a Git workflow with code reviews.",
-            "Built front-end features in JavaScript, HTML and CSS."
+            "Replaced the compliance team's manual data requests, where consumer records arrived from the core banking team as Excel exports, with a self-service web app in Angular and Spring Boot that lets them query the data on demand.",
+            "Designed the relational schema and SQL behind the reporting datasets, with indexed queries and paginated exports so large customer tables load and export without timing out.",
+            "Built the Java REST APIs and an audit trail recording who viewed which record, replacing untracked spreadsheet copies with a reviewable workflow."
           ]
         }
       ]

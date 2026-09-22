@@ -64,7 +64,7 @@
       "tagline": "Reward-based dog-training companion for the Guardian collar",
       "role": "Backend and mobile developer",
       "period": "2026 – present",
-      "status": "in development",
+      "status": "on TestFlight",
       "stack": [
         "Go 1.25",
         "Gin",
@@ -80,7 +80,7 @@
       ],
       "links": [],
       "numbers": [
-        { "label": "Go tests", "value": "134" },
+        { "label": "Go tests", "value": "156" },
         { "label": "Flutter tests", "value": "~480" },
         { "label": "Access token life", "value": "15 min" },
         { "label": "Image base", "value": "distroless" }

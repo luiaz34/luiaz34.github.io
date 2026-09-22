@@ -5,8 +5,8 @@
   "email": "khaingmyalhtike3400@gmail.com",
   "phone": "+66 61 117 8681",
   "site": "https://magickbox.ai",
-  "years_experience": 3,
-  "summary": "Backend developer with three years of experience building and running production systems for AI products. Built the Python backend behind Magick Box, an AI creative app on iOS, Android and the web, from the API and data model through payments, real-time chat and Kubernetes deployment. More recently the Go API and Flutter app for Magick Whisper.",
+  "years_experience": 4,
+  "summary": "AI and backend developer with four years of experience shipping and running production systems. Built and operate the Python backend behind Magick Box, an AI creative app live on the App Store, Google Play and the web, plus magick_ai, the in-house SDK that gives it chat, image, video, music and podcast generation across seven AI providers. Most recently took Magick Whisper, a Go and Flutter dog-training app, from an empty repository to TestFlight in seven weeks.",
   "languages_spoken": [
     { "language": "Burmese", "level": "native" },
     { "language": "English", "level": "professional" },
@@ -16,6 +16,9 @@
     "degree": "BSc Computer Network and Infrastructure",
     "school": "Liverpool John Moores University",
     "location": "Liverpool, United Kingdom",
-    "years": "2021 – 2024"
-  }
+    "years": "2021 – 2024",
+    "note": "Studied online alongside full-time work in Yangon"
+  },
+  "github": "https://github.com/luiaz34",
+  "linkedin": "https://www.linkedin.com/in/khaing-myal-htike-261705256"
 }

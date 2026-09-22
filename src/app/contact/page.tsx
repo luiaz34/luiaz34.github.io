@@ -7,6 +7,11 @@ const LINKS = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
   { label: 'Phone', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}` },
   { label: 'GitHub', value: 'github.com/luiaz34', href: 'https://github.com/luiaz34' },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/khaing-myal-htike-261705256',
+    href: 'https://www.linkedin.com/in/khaing-myal-htike-261705256',
+  },
   { label: 'Product', value: 'magickbox.ai', href: 'https://magickbox.ai' },
 ]
 

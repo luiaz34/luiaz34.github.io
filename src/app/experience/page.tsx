@@ -64,6 +64,9 @@ export default function ExperiencePage() {
           <p className="mono text-[12.5px]" style={{ color: 'var(--muted)' }}>
             {profile.education.degree} · {profile.education.location} · {profile.education.years}
           </p>
+          <p className="mt-2 text-[13px]" style={{ color: 'var(--muted)' }}>
+            {profile.education.note}
+          </p>
         </div>
       </section>
 
