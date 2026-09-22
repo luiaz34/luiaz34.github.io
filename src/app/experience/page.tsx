@@ -19,7 +19,7 @@ export default function ExperiencePage() {
         <p className="eyebrow mb-3">Career</p>
         <h1 className="grad-text text-[32px] font-bold tracking-tight">Experience</h1>
         <p className="mt-2 max-w-[62ch] text-sm" style={{ color: 'var(--muted)' }}>
-          Three years, two employers, and one long stretch of owning a production backend end to end.
+          Four years, two employers, and one long stretch of owning a production backend end to end.
         </p>
       </header>
 
