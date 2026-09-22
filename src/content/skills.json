@@ -88,7 +88,7 @@
       ]
     },
     {
-      "name": "Mobile and payments",
+      "name": "Mobile, web and payments",
       "items": ["Flutter", "Riverpod", "go_router", "Angular", "Stripe", "RevenueCat", "AdMob SSV"]
     }
   ]
