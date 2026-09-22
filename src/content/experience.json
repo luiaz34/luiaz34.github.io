@@ -32,6 +32,14 @@
           ]
         },
         {
+          "name": "Legal document RAG",
+          "blurb": "Two retrieval prototypes over Thai statutes, Aug – Oct 2024 (private repositories)",
+          "highlights": [
+            "Built policyGraphRAG, a question-answering API over eleven Thai statutes (Copyright, Patent, Trademark, Immigration, Labour Protection, Land Code, Revenue Code and others): set up the Microsoft GraphRAG pipeline per act with GPT-4o entity extraction, community summaries and LanceDB embeddings, served from FastAPI with one endpoint per act. Started the repo and built the indexing; a team of four added contract analysis on top.",
+            "Built vision-rag, a multimodal RAG chatbot that indexes PDF pages as images with ColPali through Byaldi, retrieves the top pages per query and answers with GPT-4o vision, so scanned statutes and tables work without OCR. Per-session indexes and uploads behind a FastAPI API."
+          ]
+        },
+        {
           "name": "Magick Whisper",
           "blurb": "Dog-training companion for the Guardian collar, on TestFlight",
           "highlights": [

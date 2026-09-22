@@ -66,6 +66,9 @@
         "Kling",
         "Flux",
         "RAG",
+        "GraphRAG",
+        "ColPali",
+        "LanceDB",
         "On-device Whisper"
       ]
     },
