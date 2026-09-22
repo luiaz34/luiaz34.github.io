@@ -2,7 +2,7 @@
   "groups": [
     {
       "name": "Languages",
-      "items": ["Python", "Go", "Java", "Dart", "SQL", "JavaScript", "TypeScript", "Angular"]
+      "items": ["Python", "Go", "Java", "Dart", "SQL", "JavaScript", "TypeScript"]
     },
     {
       "name": "Backend",
@@ -51,7 +51,7 @@
         "JWKS verification",
         "Argon2",
         "Webhook signature verification",
-        "DAST scanning"
+        "DAST"
       ]
     },
     {
@@ -88,8 +88,12 @@
       ]
     },
     {
-      "name": "Mobile and payments",
-      "items": ["Flutter", "Riverpod", "go_router", "Stripe", "RevenueCat", "AdMob SSV"]
+      "name": "Frontend",
+      "items": ["Flutter", "Riverpod", "go_router", "Angular", "TypeScript"]
+    },
+    {
+      "name": "Payments",
+      "items": ["Stripe", "RevenueCat", "AdMob SSV"]
     }
   ]
 }

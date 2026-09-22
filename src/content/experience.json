@@ -18,7 +18,7 @@
             "Built Mini Cinema, a multi-shot AI film pipeline that streams reasoning, approval gates and renders to the client as typed content blocks.",
             "Built real-time and group chat over Socket.IO with token streaming, AI personas alongside human members, and pub/sub keeping pods in sync.",
             "Built billing on Stripe, RevenueCat and AdMob with signature-verified webhooks and an idempotent credit ledger, so retried webhooks never grant credits twice.",
-            "Implemented device-bound JWT sessions, Argon2 hashing with transparent migration of legacy hashes, email OTP and Google and Apple sign-in.",
+            "Implemented device-bound JWT sessions, Argon2 hashing with transparent migration of legacy hashes, email OTP and Google and Apple sign-in, so existing users kept their accounts through the migration.",
             "Deployed to Kubernetes on AWS with Helm, Istio mTLS and autoscaling from one Docker image; GitHub Actions runs 181 tests, build, release and DAST scans on every change."
           ]
         },
@@ -32,14 +32,6 @@
           ]
         },
         {
-          "name": "Legal document RAG",
-          "blurb": "Two retrieval prototypes over Thai statutes, Aug – Oct 2024 (private repositories)",
-          "highlights": [
-            "Built policyGraphRAG, a question-answering API over eleven Thai statutes: Microsoft GraphRAG per act with GPT-4o entity extraction, community summaries and LanceDB embeddings, served from FastAPI. Started the repo and built the indexing; a team of four added contract analysis.",
-            "Built vision-rag, a multimodal RAG chatbot that indexes PDF pages as images with ColPali and answers with GPT-4o vision, so scanned statutes work without OCR."
-          ]
-        },
-        {
           "name": "Magick Whisper",
           "blurb": "Dog-training companion for the Guardian collar, on TestFlight",
           "highlights": [
@@ -47,6 +39,14 @@
             "Implemented Google and Apple sign-in against cached JWKS with 15-minute access tokens and rotating refresh tokens, kept optional to pass App Store guideline 5.1.1.",
             "Added on-device speech recognition with Whisper and Silero VAD, plus an offline session store with retry-safe uploads, so sessions record without a connection.",
             "Go tests run against a real PostgreSQL in CI and the build fails if any database test skips; Codemagic ships signed builds to TestFlight and Google Play."
+          ]
+        },
+        {
+          "name": "Legal document RAG",
+          "blurb": "Two retrieval prototypes over Thai statutes, Aug – Oct 2024 (private repositories)",
+          "highlights": [
+            "Built policyGraphRAG, a question-answering API over eleven Thai statutes: Microsoft GraphRAG per act with GPT-4o entity extraction, community summaries and LanceDB embeddings, served from FastAPI. Started the repo and built the indexing; a team of four added contract analysis.",
+            "Built vision-rag, a multimodal RAG chatbot that indexes PDF pages as images with ColPali and answers with GPT-4o vision, so scanned statutes work without OCR."
           ]
         }
       ]
