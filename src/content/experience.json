@@ -28,7 +28,7 @@
           "highlights": [
             "Wrote and maintain the Python SDK behind Magick Box: one UniversalAgent call covers chat, image, video, music and podcast generation across OpenAI, Google, Stability, Replicate, Suno and AIML via LiteLLM. Around 280 modules, 35+ tagged releases.",
             "Built the agents on top: chat orchestration with per-type handlers and validators, a persona agent, podcast and storybook generators, and automatic tagging.",
-            "Added document analysis (PDF, Word, Excel, PowerPoint), web search and prompt enhancement, with standardised results and one error model in place of seven provider-specific ones."
+            "Added document analysis (PDF, Word, Excel, PowerPoint), web search and prompt enhancement, with standardised results and one error model in place of six provider-specific ones."
           ]
         },
         {
